@@ -199,10 +199,10 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 
 
+Route::get('/', [ClientController::class, 'index'])->name('client.home');
 Route::prefix('client')->group(function () {
 
     //Trang chủ
-    Route::get('/home', [ClientController::class, 'index'])->name('client.home');
 
     Route::get('/login', [ClientController::class, 'viewLogin'])->name('client.viewLogin');
     Route::post('/login', [ClientController::class, 'login'])->name('client.login');
